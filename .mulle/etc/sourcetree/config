@@ -1,0 +1,2 @@
+mulle-geometry;${MULLE_GEOMETRY_NODETYPE:-tar};no-all-load,no-cmake-loader,no-cmake-searchpath,no-import;2173D238-897D-4345-845D-2DA1473C4E50;${MULLE_GEOMETRY_URL:-https://github.com/MulleUI/mulle-geometry/archive/${MULLE_TAG}.tar.gz};${MULLE_GEOMETRY_BRANCH};${MULLE_GEOMETRY_TAG:-latest};;
+mulle-bitmap;${MULLE_BITMAP_NODETYPE:-tar};no-all-load,no-cmake-loader,no-cmake-searchpath,no-import;6428CC9D-F1E0-4E6A-BE77-C82E0E7851FC;${MULLE_BITMAP_URL:-https://github.com/MulleUI/mulle-bitmap/archive/${MULLE_TAG}.tar.gz};${MULLE_BITMAP_BRANCH};${MULLE_BITMAP_TAG:-latest};;
