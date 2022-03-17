@@ -12,12 +12,12 @@ if( MULLE_TRACE_INCLUDE)
 endif()
 
 #
-# Generated from sourcetree: 2173D238-897D-4345-845D-2DA1473C4E50;mulle-geometry;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import;
+# Generated from sourcetree: 2173D238-897D-4345-845D-2DA1473C4E50;mulle-geometry;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import,no-singlephase;
 # Disable with : `mulle-sourcetree mark mulle-geometry no-link`
 # Disable for this platform: `mulle-sourcetree mark mulle-geometry no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_GEOMETRY_LIBRARY)
-   find_library( MULLE_GEOMETRY_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-geometry${CMAKE_STATIC_LIBRARY_SUFFIX} mulle-geometry NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
+   find_library( MULLE_GEOMETRY_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-geometry${CMAKE_DEBUG_POSTFIX}${CMAKE_STATIC_LIBRARY_SUFFIX} ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-geometry${CMAKE_STATIC_LIBRARY_SUFFIX} mulle-geometry NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
    message( STATUS "MULLE_GEOMETRY_LIBRARY is ${MULLE_GEOMETRY_LIBRARY}")
    #
    # The order looks ascending, but due to the way this file is read
@@ -83,12 +83,12 @@ endif()
 
 
 #
-# Generated from sourcetree: 6428CC9D-F1E0-4E6A-BE77-C82E0E7851FC;mulle-bitmap;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import;
+# Generated from sourcetree: 6428CC9D-F1E0-4E6A-BE77-C82E0E7851FC;mulle-bitmap;no-all-load,no-cmake-loader,no-cmake-searchpath,no-import,no-singlephase;
 # Disable with : `mulle-sourcetree mark mulle-bitmap no-link`
 # Disable for this platform: `mulle-sourcetree mark mulle-bitmap no-cmake-platform-${MULLE_UNAME}`
 #
 if( NOT MULLE_BITMAP_LIBRARY)
-   find_library( MULLE_BITMAP_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-bitmap${CMAKE_STATIC_LIBRARY_SUFFIX} mulle-bitmap NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
+   find_library( MULLE_BITMAP_LIBRARY NAMES ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-bitmap${CMAKE_DEBUG_POSTFIX}${CMAKE_STATIC_LIBRARY_SUFFIX} ${CMAKE_STATIC_LIBRARY_PREFIX}mulle-bitmap${CMAKE_STATIC_LIBRARY_SUFFIX} mulle-bitmap NO_CMAKE_SYSTEM_PATH NO_SYSTEM_ENVIRONMENT_PATH)
    message( STATUS "MULLE_BITMAP_LIBRARY is ${MULLE_BITMAP_LIBRARY}")
    #
    # The order looks ascending, but due to the way this file is read

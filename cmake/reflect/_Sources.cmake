@@ -11,6 +11,5 @@ endif()
 # contents selected with patternfile ??-source--sources
 #
 set( SOURCES
-src/CGFrame.c
 src/mulle-framebuffer.c
 )

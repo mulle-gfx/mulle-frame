@@ -6,8 +6,15 @@ The process of transforming drawing code into bitmaps is called "rasterization".
 Whenever the drawing changes, the bitmap has to be updated. This update is
 called a "frame". The bitmap is conventionally called "framebuffer".
 
-This is the relationship between  mulle-geometry and mulle-bitmap.
+In MulleUI you don't have direct access to the framebuffer, as its on the
+GPU (usually), but you can read pixels from it.
 
+This library forms the relationship between mulle-geometry and mulle-bitmap.
+
+
+### You are here
+
+![Overview](overview.dot.svg)
 
 
 ## mulle-sde

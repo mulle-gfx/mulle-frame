@@ -45,51 +45,113 @@
 // The size is the size of the drawing into the frameBuffer, this can be
 // a floating point value. So the drawing could have a different scale.
 
-typedef struct CGFrameInfo
+typedef struct CGWindowInfo
 {
-   CGSize                 size;             // window coordinates size
+   CGRect                 frame;            // window coordinates frame
    struct CGBitmapSize    framebufferSize;  // actual pixels (frameSize * pixelRatio)
-   struct CGBitmapRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
    CGVector               UIScale;
    CGFloat                pixelRatio;
-   mulle_timeinterval_t   now;              // CAAbsoluteTime
+} CGWindowInfo;
+
+
+static inline struct CGWindowInfo
+   CGWindowInfoSFMakeVector( CGRect frame, struct CGBitmapSize framebufferSize, CGVector scale)
+{
+   struct CGWindowInfo   info;
+
+   memset( &info, 0, sizeof( info));
+
+   info.frame             = frame;
+   info.framebufferSize   = framebufferSize;
+   info.UIScale           = scale;
+   // see: https://github.com/memononen/nanovg/blob/master/src/nanovg.h#L155
+   info.pixelRatio        = framebufferSize.width / frame.size.width;
+
+   return( info);
+}
+
+static inline struct CGWindowInfo
+   CGWindowInfoSFMake( CGRect frame, struct CGBitmapSize framebufferSize, CGFloat scale)
+{
+   return( CGWindowInfoSFMakeVector( frame, framebufferSize, CGVectorMake( scale, scale)));
+}
+
+
+static inline struct CGWindowInfo
+   CGWindowInfoFBMake( struct CGBitmapSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
+{
+   struct CGWindowInfo   info;
+
+   memset( &info, 0, sizeof( info));
+
+   info.frame.size         = CGSizeMake( framebufferSize.width * pixelRatio,
+                                         framebufferSize.height * pixelRatio);
+   info.framebufferSize    = framebufferSize;
+   info.UIScale            = CGVectorMake( scale, scale);
+   info.pixelRatio         = pixelRatio;
+
+   return( info);
+}
+
+
+static inline int   CGWindowInfoEqualToWindowInfo( struct CGWindowInfo *a, struct CGWindowInfo *b)
+{
+   assert( a);
+   assert( b);
+
+   return( ! memcmp( a, b, sizeof( struct CGWindowInfo)));
+}
+
+
+typedef struct CGFrameInfo
+{
+   struct CGWindowInfo    window;
+   struct CGBitmapRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
+   CGFloat                alpha;            // set to 1.0
+   mulle_absolutetime_t   now;              // mulle_absolutetime_t
 } CGFrameInfo;
+
+
+static inline struct CGFrameInfo
+   CGFrameInfoMake( CGWindowInfo windowInfo, struct CGBitmapRect viewportFrame, CGFloat alpha)
+{
+   struct CGFrameInfo   info;
+
+   memset( &info, 0, sizeof( info));
+
+   info.window        = windowInfo;
+   info.viewportFrame = viewportFrame;
+   info.alpha         = alpha;
+
+   return( info);
+}
 
 
 // this is a convenience constructor, it's not fully flexible
 // use if you have a window with a framebuffer
 static inline struct CGFrameInfo
-   CGFrameInfoSFMake( CGSize size, struct CGBitmapSize framebufferSize, CGFloat scale)
+   CGFrameInfoSFMake( CGRect frame, struct CGBitmapSize framebufferSize, CGFloat scale)
 {
-   struct CGFrameInfo   info;
-
-   memset( &info, 0, sizeof( info));
-
-   info.size               = size;
-   info.framebufferSize    = framebufferSize;
-   info.viewportFrame.size = framebufferSize;
-   info.UIScale            = CGVectorMake( scale, scale);
-   // see: https://github.com/memononen/nanovg/blob/master/src/nanovg.h#L155
-   info.pixelRatio         = framebufferSize.width / size.width;
-
-   return( info);
+   return( CGFrameInfoMake( CGWindowInfoSFMake( frame, framebufferSize, scale),
+                            CGBitmapRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
+                            1.0));
 }
-
 // use if you have only a framebuffer
 static inline struct CGFrameInfo
    CGFrameInfoFBMake( struct CGBitmapSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
 {
-   struct CGFrameInfo   info;
+   return( CGFrameInfoMake( CGWindowInfoFBMake( framebufferSize, pixelRatio, scale),
+                            CGBitmapRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
+                            1.0));
+}
 
-   memset( &info, 0, sizeof( info));
-   info.size               = CGSizeMake( framebufferSize.width * pixelRatio,
-                                         framebufferSize.height * pixelRatio);
-   info.framebufferSize    = framebufferSize;
-   info.viewportFrame.size = framebufferSize;
-   info.UIScale            = CGVectorMake( scale, scale);
-   info.pixelRatio         = pixelRatio;
 
-   return( info);
+static inline int   CGFrameInfoEqualToFrameInfoInfo( struct CGFrameInfo *a, struct CGFrameInfo *b)
+{
+   assert( a);
+   assert( b);
+
+   return( ! memcmp( a, b, sizeof( struct CGFrameInfo)));
 }
 
 #endif
