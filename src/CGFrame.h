@@ -54,6 +54,7 @@ typedef struct CGWindowInfo
 } CGWindowInfo;
 
 
+
 static inline struct CGWindowInfo
    CGWindowInfoSFMakeVector( CGRect frame, struct CGBitmapSize framebufferSize, CGVector scale)
 {
@@ -91,6 +92,42 @@ static inline struct CGWindowInfo
    info.pixelRatio         = pixelRatio;
 
    return( info);
+}
+
+
+static inline CGRect   CGWindowInfoGetFrame( struct CGWindowInfo *info)
+{
+   return( info ? info->frame : CGRectZero);
+}
+
+
+static inline struct CGBitmapSize   CGWindowInfoGetFramebufferSize( struct CGWindowInfo *info)
+{
+   return( info ? info->framebufferSize : CGBitmapSizeZero);
+}
+
+
+static inline struct CGVector   CGWindowInfoGetUIScale( struct CGWindowInfo *info)
+{
+   return( info ? info->UIScale : CGVectorMake( 1.0f, 1.0f));
+}
+
+
+static inline CGFloat   CGWindowInfoGetPixelRatio( struct CGWindowInfo *info)
+{
+   return( info ? info->pixelRatio : 1.0f);
+}
+
+
+static inline CGPoint   CGWindowInfoGetFrameOrigin( struct CGWindowInfo *info)
+{
+   return( CGWindowInfoGetFrame( info).origin);
+}
+
+
+static inline CGSize   CGWindowInfoGetFrameSize( struct CGWindowInfo *info)
+{
+   return( CGWindowInfoGetFrame( info).size);
 }
 
 
@@ -144,6 +181,23 @@ static inline struct CGFrameInfo
                             CGBitmapRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
                             1.0));
 }
+
+
+static inline CGRect   CGFrameInfoGetFrame( struct CGFrameInfo *info)
+{
+   if( ! info)
+     return( CGRectZero);
+   return( CGWindowInfoGetFrame( &info->window));
+}
+
+
+static inline CGSize   CGFrameInfoGetFrameSize( struct CGFrameInfo *info)
+{
+   if( ! info)
+     return( CGSizeZero);
+   return( CGWindowInfoGetFrameSize( &info->window));
+}
+
 
 
 static inline int   CGFrameInfoEqualToFrameInfoInfo( struct CGFrameInfo *a, struct CGFrameInfo *b)
