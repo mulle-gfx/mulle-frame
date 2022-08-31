@@ -101,6 +101,14 @@ static inline CGRect   CGWindowInfoGetFrame( struct CGWindowInfo *info)
 }
 
 
+static inline CGRect   CGWindowInfoGetContentRect( struct CGWindowInfo *info)
+{
+   if( ! info)
+     return( CGRectZero);
+   return( CGRectMake( 0, 0, info->frame.size.width, info->frame.size.height));
+}
+
+
 static inline struct CGBitmapSize   CGWindowInfoGetFramebufferSize( struct CGWindowInfo *info)
 {
    return( info ? info->framebufferSize : CGBitmapSizeZero);
@@ -188,6 +196,14 @@ static inline CGRect   CGFrameInfoGetFrame( struct CGFrameInfo *info)
    if( ! info)
      return( CGRectZero);
    return( CGWindowInfoGetFrame( &info->window));
+}
+
+
+static inline CGRect   CGFrameInfoGetContentRect( struct CGFrameInfo *info)
+{
+   if( ! info)
+     return( CGRectZero);
+   return( CGWindowInfoGetContentRect( &info->window));
 }
 
 
