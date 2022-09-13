@@ -48,7 +48,7 @@
 typedef struct CGWindowInfo
 {
    CGRect                 frame;            // window coordinates frame
-   struct CGBitmapSize    framebufferSize;  // actual pixels (frameSize * pixelRatio)
+   struct MulleIntegerSize    framebufferSize;  // actual pixels (frameSize * pixelRatio)
    CGVector               UIScale;
    CGFloat                pixelRatio;
 } CGWindowInfo;
@@ -56,7 +56,7 @@ typedef struct CGWindowInfo
 
 
 static inline struct CGWindowInfo
-   CGWindowInfoSFMakeVector( CGRect frame, struct CGBitmapSize framebufferSize, CGVector scale)
+   CGWindowInfoSFMakeVector( CGRect frame, struct MulleIntegerSize framebufferSize, CGVector scale)
 {
    struct CGWindowInfo   info;
 
@@ -72,14 +72,14 @@ static inline struct CGWindowInfo
 }
 
 static inline struct CGWindowInfo
-   CGWindowInfoSFMake( CGRect frame, struct CGBitmapSize framebufferSize, CGFloat scale)
+   CGWindowInfoSFMake( CGRect frame, struct MulleIntegerSize framebufferSize, CGFloat scale)
 {
    return( CGWindowInfoSFMakeVector( frame, framebufferSize, CGVectorMake( scale, scale)));
 }
 
 
 static inline struct CGWindowInfo
-   CGWindowInfoFBMake( struct CGBitmapSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
+   CGWindowInfoFBMake( struct MulleIntegerSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
 {
    struct CGWindowInfo   info;
 
@@ -109,9 +109,9 @@ static inline CGRect   CGWindowInfoGetContentRect( struct CGWindowInfo *info)
 }
 
 
-static inline struct CGBitmapSize   CGWindowInfoGetFramebufferSize( struct CGWindowInfo *info)
+static inline struct MulleIntegerSize   CGWindowInfoGetFramebufferSize( struct CGWindowInfo *info)
 {
-   return( info ? info->framebufferSize : CGBitmapSizeZero);
+   return( info ? info->framebufferSize : MulleIntegerSizeZero);
 }
 
 
@@ -151,14 +151,14 @@ static inline int   CGWindowInfoEqualToWindowInfo( struct CGWindowInfo *a, struc
 typedef struct CGFrameInfo
 {
    struct CGWindowInfo    window;
-   struct CGBitmapRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
+   struct MulleIntegerRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
    CGFloat                alpha;            // set to 1.0
    mulle_absolutetime_t   now;              // mulle_absolutetime_t
 } CGFrameInfo;
 
 
 static inline struct CGFrameInfo
-   CGFrameInfoMake( CGWindowInfo windowInfo, struct CGBitmapRect viewportFrame, CGFloat alpha)
+   CGFrameInfoMake( CGWindowInfo windowInfo, struct MulleIntegerRect viewportFrame, CGFloat alpha)
 {
    struct CGFrameInfo   info;
 
@@ -175,18 +175,18 @@ static inline struct CGFrameInfo
 // this is a convenience constructor, it's not fully flexible
 // use if you have a window with a framebuffer
 static inline struct CGFrameInfo
-   CGFrameInfoSFMake( CGRect frame, struct CGBitmapSize framebufferSize, CGFloat scale)
+   CGFrameInfoSFMake( CGRect frame, struct MulleIntegerSize framebufferSize, CGFloat scale)
 {
    return( CGFrameInfoMake( CGWindowInfoSFMake( frame, framebufferSize, scale),
-                            CGBitmapRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
+                            MulleIntegerRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
                             1.0));
 }
 // use if you have only a framebuffer
 static inline struct CGFrameInfo
-   CGFrameInfoFBMake( struct CGBitmapSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
+   CGFrameInfoFBMake( struct MulleIntegerSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
 {
    return( CGFrameInfoMake( CGWindowInfoFBMake( framebufferSize, pixelRatio, scale),
-                            CGBitmapRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
+                            MulleIntegerRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
                             1.0));
 }
 

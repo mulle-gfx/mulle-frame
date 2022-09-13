@@ -3,6 +3,8 @@
 
 #include "include.h"
 
+#include <stdint.h>
+
 
 enum CGFramebufferBitmapType
 {
@@ -13,6 +15,8 @@ enum CGFramebufferBitmapType
    // CGFramebufferDepthBytes,  // Nvidia/GL crashes when you try GL_UNSIGNED as return type
    CGFramebufferDepthFloats
 };
+
+typedef uintptr_t  CGFramebufferBitmapType;
 
 
 #endif

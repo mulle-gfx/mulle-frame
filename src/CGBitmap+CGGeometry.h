@@ -6,28 +6,28 @@
 #include <math.h>
 
 
-static inline struct CGSize    CGBitmapSizeGetSize( struct CGBitmapSize a)
+static inline struct CGSize    MulleIntegerSizeGetSize( struct MulleIntegerSize a)
 {
    return( CGSizeMake( a.width, a.height));
 }
 
-static inline struct CGBitmapSize    CGSizeGetBitmapSize(CGSize a)
+static inline struct MulleIntegerSize    CGSizeGetIntegerSize(CGSize a)
 {
-   return( CGBitmapSizeMake( roundf( a.width), roundf( a.height)));  // round or floor ?
+   return( MulleIntegerSizeMake( roundf( a.width), roundf( a.height)));  // round or floor ?
 }
 
-static inline CGPoint   CGBitmapPointGetPoint( struct CGBitmapPoint a)
+static inline CGPoint   MulleIntegerPointGetPoint( struct MulleIntegerPoint a)
 {
    return( CGPointMake( a.x, a.y));
 }
 
 
-static inline struct CGBitmapPoint    CGPointGetBitmapPoint( struct CGPoint a)
+static inline struct MulleIntegerPoint    CGPointGetIntegerPoint( struct CGPoint a)
 {
-   return( CGBitmapPointMake( (NSInteger) a.x, (NSInteger) a.y));
+   return( MulleIntegerPointMake( (NSInteger) a.x, (NSInteger) a.y));
 }
 
-static inline CGRect   CGBitmapRectGetRect( struct CGBitmapRect a)
+static inline CGRect   MulleIntegerRectGetRect( struct MulleIntegerRect a)
 {
    return( CGRectMake( a.origin.x, a.origin.y, a.size.width, a.size.height));
 }
