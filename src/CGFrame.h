@@ -150,10 +150,10 @@ static inline int   CGWindowInfoEqualToWindowInfo( struct CGWindowInfo *a, struc
 
 typedef struct CGFrameInfo
 {
-   struct CGWindowInfo    window;
+   struct CGWindowInfo        window;
    struct MulleIntegerRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
-   CGFloat                alpha;            // set to 1.0
-   mulle_absolutetime_t   now;              // mulle_absolutetime_t
+   CGFloat                    alpha;            // set to 1.0
+   mulle_absolutetime_t       now;              // mulle_absolutetime_t
 } CGFrameInfo;
 
 
