@@ -10,28 +10,28 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE_FRAMEBUFFER_VERSION  ((0 << 20) | (7 << 8) | 56)
+#define MULLE__FRAMEBUFFER_VERSION  ((0 << 20) | (7 << 8) | 56)
 
 
 static inline unsigned int   mulle_framebuffer_get_version_major( void)
 {
-   return( MULLE_FRAMEBUFFER_VERSION >> 20);
+   return( MULLE__FRAMEBUFFER_VERSION >> 20);
 }
 
 
 static inline unsigned int   mulle_framebuffer_get_version_minor( void)
 {
-   return( (MULLE_FRAMEBUFFER_VERSION >> 8) & 0xFFF);
+   return( (MULLE__FRAMEBUFFER_VERSION >> 8) & 0xFFF);
 }
 
 
 static inline unsigned int   mulle_framebuffer_get_version_patch( void)
 {
-   return( MULLE_FRAMEBUFFER_VERSION & 0xFF);
+   return( MULLE__FRAMEBUFFER_VERSION & 0xFF);
 }
 
 
-MULLE_FRAMEBUFFER_EXTERN_GLOBAL
+MULLE__FRAMEBUFFER_EXTERN_GLOBAL
 uint32_t   mulle_framebuffer_get_version( void);
 
 

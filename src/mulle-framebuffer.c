@@ -3,12 +3,12 @@
 #include "mulle-framebuffer.h"
 
 
-int   __MULLE_FRAMEBUFFER_ranlib__;
+int   __MULLE__FRAMEBUFFER_ranlib__;
 
 
 uint32_t   mulle_framebuffer_get_version( void)
 {
-   return( MULLE_FRAMEBUFFER_VERSION);
+   return( MULLE__FRAMEBUFFER_VERSION);
 }
 
 

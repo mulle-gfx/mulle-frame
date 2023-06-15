@@ -25,8 +25,8 @@
 
 #include "_mulle-framebuffer-include.h"
 
-#ifndef MULLE_FRAMEBUFFER_EXTERN_GLOBAL
-# define MULLE_FRAMEBUFFER_EXTERN_GLOBAL  MULLE_C_EXTERN_GLOBAL
+#ifndef MULLE__FRAMEBUFFER_EXTERN_GLOBAL
+# define MULLE__FRAMEBUFFER_EXTERN_GLOBAL  MULLE_C_EXTERN_GLOBAL
 #endif
 
 /* You can add some more include statements here */
