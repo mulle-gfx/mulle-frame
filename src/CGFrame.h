@@ -47,10 +47,10 @@
 
 typedef struct CGWindowInfo
 {
-   CGRect                 frame;            // window coordinates frame
+   CGRect                     frame;            // window coordinates frame
    struct MulleIntegerSize    framebufferSize;  // actual pixels (frameSize * pixelRatio)
-   CGVector               UIScale;
-   CGFloat                pixelRatio;
+   CGVector                   UIScale;
+   CGFloat                    pixelRatio;
 } CGWindowInfo;
 
 
@@ -139,6 +139,7 @@ static inline CGSize   CGWindowInfoGetFrameSize( struct CGWindowInfo *info)
 }
 
 
+
 static inline int   CGWindowInfoEqualToWindowInfo( struct CGWindowInfo *a, struct CGWindowInfo *b)
 {
    assert( a);
@@ -214,6 +215,13 @@ static inline CGSize   CGFrameInfoGetFrameSize( struct CGFrameInfo *info)
    return( CGWindowInfoGetFrameSize( &info->window));
 }
 
+
+static inline struct MulleIntegerSize   CGFrameInfoGetFramebufferSize( struct CGFrameInfo *info)
+{
+   if( ! info)
+     return( MulleIntegerSizeZero);
+   return( CGWindowInfoGetFramebufferSize( &info->window));
+}
 
 
 static inline int   CGFrameInfoEqualToFrameInfoInfo( struct CGFrameInfo *a, struct CGFrameInfo *b)
