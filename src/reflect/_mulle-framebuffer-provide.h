@@ -9,6 +9,13 @@
  *
  *      mulle-sde environment set MULLE_MATCH_TO_C_RUN DISABLE
  */
+#ifndef mulle_framebuffer_provide_h__
+#define mulle_framebuffer_provide_h__
+
+
 #include "CGBitmap+CGGeometry.h"
 #include "CGFramebuffer.h"
 #include "CGFrame.h"
+
+
+#endif
