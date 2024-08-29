@@ -40,7 +40,8 @@
 
 
 
-// A frame describes the "frame" that is currently being rendered/rasterized.
+// The window info describes the window framebuffer that is currently being
+// rendered/rasterized.
 // The render destination is a framebuffer of "framebufferSize".
 // The size is the size of the drawing into the frameBuffer, this can be
 // a floating point value. So the drawing could have a different scale.
@@ -153,13 +154,17 @@ typedef struct CGFrameInfo
 {
    struct CGWindowInfo        window;
    struct MulleIntegerRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
-   CGFloat                    alpha;            // set to 1.0
+   float                      alpha;            // set to 1.0
    mulle_absolutetime_t       now;              // mulle_absolutetime_t
+   mulle_relativetime_t       refreshRate;      // screen refreshRate, NOT the frameRate we want to achieve
+   mulle_relativetime_t       frameRate;        // the frameRate we want to achieve
 } CGFrameInfo;
 
 
 static inline struct CGFrameInfo
-   CGFrameInfoMake( CGWindowInfo windowInfo, struct MulleIntegerRect viewportFrame, CGFloat alpha)
+   CGFrameInfoMake( CGWindowInfo windowInfo,
+                    struct MulleIntegerRect viewportFrame,
+                    float alpha)
 {
    struct CGFrameInfo   info;
 
@@ -176,7 +181,9 @@ static inline struct CGFrameInfo
 // this is a convenience constructor, it's not fully flexible
 // use if you have a window with a framebuffer
 static inline struct CGFrameInfo
-   CGFrameInfoSFMake( CGRect frame, struct MulleIntegerSize framebufferSize, CGFloat scale)
+   CGFrameInfoSFMake( CGRect frame,
+                      struct MulleIntegerSize framebufferSize,
+                      CGFloat scale)
 {
    return( CGFrameInfoMake( CGWindowInfoSFMake( frame, framebufferSize, scale),
                             MulleIntegerRectMake( 0, 0, framebufferSize.width, framebufferSize.height),
@@ -184,7 +191,9 @@ static inline struct CGFrameInfo
 }
 // use if you have only a framebuffer
 static inline struct CGFrameInfo
-   CGFrameInfoFBMake( struct MulleIntegerSize framebufferSize, CGFloat pixelRatio, CGFloat scale)
+   CGFrameInfoFBMake( struct MulleIntegerSize framebufferSize,
+                      CGFloat pixelRatio,
+                      CGFloat scale)
 {
    return( CGFrameInfoMake( CGWindowInfoFBMake( framebufferSize, pixelRatio, scale),
                             MulleIntegerRectMake( 0, 0, framebufferSize.width, framebufferSize.height),

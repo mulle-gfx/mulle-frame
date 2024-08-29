@@ -2,6 +2,11 @@
 
 #### 💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap
 
+
+# mulle-framebuffer
+
+#### 💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap
+
 The process of transforming drawing code into bitmaps is called "rasterization".
 Whenever the drawing changes, the bitmap has to be updated. This update is
 called a "frame". The bitmap is conventionally called "framebuffer".
@@ -12,33 +17,73 @@ GPU (usually), but you can read pixels from it.
 This library forms the relationship between mulle-geometry and mulle-bitmap.
 
 
+
+
+
+| Release Version                                       | Release Notes
+|-------------------------------------------------------|--------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-gfx/mulle-framebuffer.svg?branch=release) [![Build Status](https://github.com/mulle-gfx/mulle-framebuffer/workflows/CI/badge.svg?branch=release)](//github.com/mulle-gfx/mulle-framebuffer/actions) | [RELEASENOTES](RELEASENOTES.md) |
+
+
+
+
+
+
 ### You are here
 
 ![Overview](overview.dot.svg)
 
 
-## mulle-sde
 
-This is a [mulle-sde](//github.com/mulle-sde) project. mulle-sde combines
-recursive package management with cross-platform builds via **cmake**:
 
-Action  | Command                               | Description
---------|---------------------------------------|---------------
-Build   | `mulle-sde craft [--release|--debug]` | Builds into local `kitchen` folder
-Add     | `mulle-sde dependency add --c --github <|GITHUB_USER|> mulle_framebuffer` | Add mulle_framebuffer to another mulle-sde project as a dependency
-Install | `mulle-sde install --prefix /usr/local https://github.com/<|GITHUB_USER|>/mulle_framebuffer.git` | Like `make install`
 
+## Add
+
+**This project is a component of the [mulle-core](//github.com/mulle-core/mulle-core) library. As such you usually will *not* add or install it
+individually, unless you specifically do not want to link against
+`mulle-core`.**
+
+
+### Add as an individual component
+
+Use [mulle-sde](//github.com/mulle-sde) to add mulle-framebuffer to your project:
+
+``` sh
+mulle-sde add github:mulle-gfx/mulle-framebuffer
+```
+
+To only add the sources of mulle-framebuffer with dependency
+sources use [clib](https://github.com/clibs/clib):
+
+
+``` sh
+clib install --out src/mulle-gfx mulle-gfx/mulle-framebuffer
+```
+
+Add `-isystem src/mulle-gfx` to your `CFLAGS` and compile all the sources that were downloaded with your project.
+
+
+## Install
+
+### Install with mulle-sde
+
+Use [mulle-sde](//github.com/mulle-sde) to build and install mulle-framebuffer and all dependencies:
+
+``` sh
+mulle-sde install --prefix /usr/local \
+   https://github.com/mulle-gfx/mulle-framebuffer/archive/latest.tar.gz
+```
 
 ### Manual Installation
 
-
 Install the requirements:
 
-Requirements                                      | Description
---------------------------------------------------|-----------------------
-[some-requirement](//github.com/some/requirement) | Some requirement
+| Requirements                                 | Description
+|----------------------------------------------|-----------------------
+| [mulle-geometry](https://github.com/MulleUI/mulle-geometry)             | 
+| [mulle-bitmap](https://github.com/MulleUI/mulle-bitmap)             | 
 
-Install into `/usr/local`:
+Install **mulle-framebuffer** into `/usr/local` with [cmake](https://cmake.org):
 
 ``` sh
 cmake -B build \
@@ -50,9 +95,9 @@ cmake --install build --config Release
 ```
 
 
-<!--
-extension : mulle-sde/sde
-directory : demo/library
-template  : .../README.md
-Suppress this comment with `export MULLE_SDE_GENERATE_FILE_COMMENTS=NO`
--->
+## Author
+
+[Nat!](https://mulle-kybernetik.com/weblog) for Mulle kybernetiK  
+
+
+

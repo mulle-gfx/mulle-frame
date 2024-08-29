@@ -1,7 +1,7 @@
 {
    "name" : "mulle-framebuffer",
    "version" : "0.7.56",
-   "description" : "mulle-framebuffer combines mulle-geometry with mulle-bitmap",
+   "description" : "💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap",
    "keywords" : [],
    "license" : "UNLICENSED",
    "repo" : "MulleUI/mulle-framebuffer",

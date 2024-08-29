@@ -18,8 +18,11 @@
 <!-- mulle&#45;bitmap -->
 <g id="node2" class="node">
 <title>mulle&#45;bitmap</title>
+<g id="a_node2"><a xlink:href="https://github.com/MulleUI/mulle-bitmap" xlink:title="mulle&#45;bitmap">
 <polygon fill="lightgrey" stroke="black" points="302,-90 191,-90 191,-54 302,-54 302,-90"/>
 <text text-anchor="middle" x="246.5" y="-68.3" font-family="Times,serif" font-size="14.00">mulle&#45;bitmap</text>
+</a>
+</g>
 </g>
 <!-- mulle&#45;framebuffer&#45;&gt;mulle&#45;bitmap -->
 <g id="edge1" class="edge">
@@ -30,8 +33,11 @@
 <!-- mulle&#45;geometry -->
 <g id="node3" class="node">
 <title>mulle&#45;geometry</title>
+<g id="a_node3"><a xlink:href="https://github.com/MulleUI/mulle-geometry" xlink:title="mulle&#45;geometry">
 <polygon fill="lightgrey" stroke="black" points="311,-36 182,-36 182,0 311,0 311,-36"/>
 <text text-anchor="middle" x="246.5" y="-14.3" font-family="Times,serif" font-size="14.00">mulle&#45;geometry</text>
+</a>
+</g>
 </g>
 <!-- mulle&#45;framebuffer&#45;&gt;mulle&#45;geometry -->
 <g id="edge2" class="edge">

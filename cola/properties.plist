@@ -1,0 +1,29 @@
+{
+   project =
+   {
+      description="💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap";
+      domain="github";
+      name="mulle-framebuffer";
+      user="mulle-gfx";
+      repo="mulle-framebuffer";
+      homepage="https://github.com/MulleUI/mulle-framebuffer/tree/mulle-framebuffer.git";
+      license="UNLICENSED"
+   };
+   dependencies =
+   (
+      {
+         domain="github";
+         name="mulle-geometry";
+         repo="mulle-geometry";
+         url="https://github.com/MulleUI/mulle-geometry";
+         user="MulleUI";
+      },
+      {
+         domain="github";
+         name="mulle-bitmap";
+         repo="mulle-bitmap";
+         url="https://github.com/MulleUI/mulle-bitmap";
+         user="MulleUI";
+      }
+   );
+}
