@@ -19,7 +19,7 @@ src/reflect
 # contents selected with patternfile ??-header--private-generated-headers
 #
 set( PRIVATE_GENERATED_HEADERS
-src/reflect/_mulle-framebuffer-include-private.h
+src/reflect/_mulle-frame-include-private.h
 )
 
 #
@@ -33,8 +33,8 @@ src/include-private.h
 # contents selected with patternfile ??-header--public-generated-headers
 #
 set( PUBLIC_GENERATED_HEADERS
-src/reflect/_mulle-framebuffer-include.h
-src/reflect/_mulle-framebuffer-provide.h
+src/reflect/_mulle-frame-include.h
+src/reflect/_mulle-frame-provide.h
 )
 
 #
@@ -49,8 +49,7 @@ src/include.h
 #
 set( PUBLIC_HEADERS
 src/CGBitmap+CGGeometry.h
-src/CGFramebuffer.h
 src/CGFrame.h
-src/mulle-framebuffer.h
+src/mulle-frame.h
 )
 

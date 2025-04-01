@@ -1,14 +1,14 @@
 #include "include-private.h"
 
-#include "mulle-framebuffer.h"
+#include "mulle-frame.h"
 
 
-int   __MULLE__FRAMEBUFFER_ranlib__;
+int   __MULLE__FRAME_ranlib__;
 
 
-uint32_t   mulle_framebuffer_get_version( void)
+uint32_t   mulle_frame_get_version( void)
 {
-   return( MULLE__FRAMEBUFFER_VERSION);
+   return( MULLE__FRAME_VERSION);
 }
 
 

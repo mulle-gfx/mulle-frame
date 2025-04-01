@@ -6,57 +6,61 @@
 #include <math.h>
 
 
-static inline CGPoint   CGPointMakeWithIntegerPoint( struct MulleIntegerPoint a)
+static inline CGPoint   CGPointMakeWithIntegerPoint( struct CGPixelPoint a)
 {
    return( CGPointMake( a.x, a.y));
 }
 
-static inline struct MulleIntegerPoint    MulleIntegerPointMakeWithPoint( struct CGPoint a)
+
+static inline struct CGPixelPoint    CGPixelPointMakeWithPoint( struct CGPoint a)
 {
-   return( MulleIntegerPointMake( (NSInteger)roundf( a.x), 
-                                  (NSInteger) roundf( a.y)));
+   // TODO: check this: usually we truncate orgin and round size
+   return( CGPixelPointMake( (NSInteger) roundf( a.x),
+                             (NSInteger) roundf( a.y)));
 }
 
 
-static inline struct CGSize    CGSizeMakeWithIntegerSize( struct MulleIntegerSize a)
+static inline struct CGSize    CGSizeMakeWithIntegerSize( struct CGPixelSize a)
 {
    return( CGSizeMake( a.width, a.height));
 }
 
-static inline struct MulleIntegerSize    MulleIntegerSizeMakeWithSize(CGSize a)
+
+static inline struct CGPixelSize    CGPixelSizeMakeWithSize(CGSize a)
 {
-   return( MulleIntegerSizeMake( (NSInteger) roundf( a.width), 
-                                 (NSInteger) roundf( a.height)));  // round or floor ?
+   return( CGPixelSizeMake( (NSInteger) roundf( a.width),
+                            (NSInteger) roundf( a.height)));  // round or floor ?
 }
 
 
-static inline CGRect   CGRectMakeWithIntegerRect( struct MulleIntegerRect a)
+static inline CGRect   CGRectMakeWithIntegerRect( struct CGPixelRect a)
 {
    return( CGRectMake( a.origin.x, a.origin.y, a.size.width, a.size.height));
 }
 
 
-static inline CGRect   CGRectMakeWithIntegerSize( struct MulleIntegerSize a)
+static inline CGRect   CGRectMakeWithIntegerSize( struct CGPixelSize a)
 {
    return( CGRectMake( 0, 0, a.width, a.height));
 }
 
 
-static inline struct MulleIntegerRect   MulleIntegerRectMakeWithRect( CGRect a)
+static inline struct CGPixelRect   CGPixelRectMakeWithRect( CGRect a)
 {
-   return( MulleIntegerRectMake( roundf( a.origin.x), 
-                                 roundf( a.origin.y), 
-                                 roundf( a.size.width), 
-                                 roundf( a.size.height)));
+   // TODO: check this: usually we truncate orgin and round size
+   return( CGPixelRectMake( roundf( a.origin.x),
+                            roundf( a.origin.y), 
+                            roundf( a.size.width), 
+                            roundf( a.size.height)));
 }
 
 
-static inline struct MulleIntegerRect   MulleIntegerRectMakeWithSize( CGSize a)
+static inline struct CGPixelRect   CGPixelRectMakeWithSize( CGSize a)
 {
-   return( MulleIntegerRectMake( 0, 
-                                 0, 
-                                 roundf( a.width), 
-                                 roundf( a.height)));
+   return( CGPixelRectMake( 0,
+                            0, 
+                            roundf( a.width), 
+                            roundf( a.height)));
 }
 
 #endif

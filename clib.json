@@ -1,21 +1,20 @@
 {
-   "name" : "mulle-framebuffer",
+   "name" : "mulle-frame",
    "version" : "0.7.56",
-   "description" : "💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap",
+   "description" : "💺 mulle-frame combines mulle-geometry with mulle-bitmap",
    "keywords" : [],
    "license" : "UNLICENSED",
-   "repo" : "MulleUI/mulle-framebuffer",
+   "repo" : "MulleUI/mulle-frame",
    "src" : [
       "src/CGBitmap+CGGeometry.h",
       "src/CGFrame.h",
-      "src/CGFramebuffer.h",
       "src/include-private.h",
       "src/include.h",
-      "src/mulle-framebuffer.c",
-      "src/mulle-framebuffer.h",
-      "src/reflect/_mulle-framebuffer-include-private.h",
-      "src/reflect/_mulle-framebuffer-include.h",
-      "src/reflect/_mulle-framebuffer-provide.h"
+      "src/mulle-frame.c",
+      "src/mulle-frame.h",
+      "src/reflect/_mulle-frame-include-private.h",
+      "src/reflect/_mulle-frame-include.h",
+      "src/reflect/_mulle-frame-provide.h"
    ],
    "dependencies" : {
       "MulleUI/mulle-geometry": "*",

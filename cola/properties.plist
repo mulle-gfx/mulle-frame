@@ -1,12 +1,12 @@
 {
    project =
    {
-      description="💺 mulle-framebuffer combines mulle-geometry with mulle-bitmap";
+      description="💺 mulle-frame combines mulle-geometry with mulle-bitmap";
       domain="github";
-      name="mulle-framebuffer";
+      name="mulle-frame";
       user="mulle-gfx";
-      repo="mulle-framebuffer";
-      homepage="https://github.com/MulleUI/mulle-framebuffer/tree/mulle-framebuffer.git";
+      repo="mulle-frame";
+      homepage="https://github.com/MulleUI/mulle-frame/tree/mulle-frame.git";
       license="UNLICENSED"
    };
    dependencies =

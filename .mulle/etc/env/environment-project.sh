@@ -14,7 +14,7 @@ export PROJECT_SOURCE_DIR="src"
 #
 #
 #
-export PROJECT_NAME="mulle-framebuffer"
+export PROJECT_NAME="mulle-frame"
 
 
 #

@@ -11,8 +11,8 @@
  *
  */
 
-#ifndef _mulle_framebuffer_include_h__
-#define _mulle_framebuffer_include_h__
+#ifndef _mulle_frame_include_h__
+#define _mulle_frame_include_h__
 
 // To remove the following dependency (headers and library) completely:
 //   `mulle-sde dependency remove mulle-geometry`
