@@ -167,7 +167,7 @@ static inline int   CGWindowInfoEqualToWindowInfo( struct CGWindowInfo *a, struc
 typedef struct CGFrameInfo
 {
    struct CGWindowInfo        window;
-   struct CGPixelRect    viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
+   struct CGPixelRect         viewportFrame;    // used for the viewport (use: 0, 0, frameSize)
    float                      alpha;            // set to 1.0
    mulle_absolutetime_t       now;              // mulle_absolutetime_t
    mulle_relativetime_t       refreshRate;      // screen refreshRate, NOT the frameRate we want to achieve

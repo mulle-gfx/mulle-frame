@@ -6,7 +6,7 @@
 #include <math.h>
 
 
-static inline CGPoint   CGPointMakeWithIntegerPoint( struct CGPixelPoint a)
+static inline CGPoint   CGPointMakeWithPixelPoint( struct CGPixelPoint a)
 {
    return( CGPointMake( a.x, a.y));
 }
@@ -20,7 +20,7 @@ static inline struct CGPixelPoint    CGPixelPointMakeWithPoint( struct CGPoint a
 }
 
 
-static inline struct CGSize    CGSizeMakeWithIntegerSize( struct CGPixelSize a)
+static inline struct CGSize    CGSizeMakeWithPixelSize( struct CGPixelSize a)
 {
    return( CGSizeMake( a.width, a.height));
 }
@@ -33,13 +33,13 @@ static inline struct CGPixelSize    CGPixelSizeMakeWithSize(CGSize a)
 }
 
 
-static inline CGRect   CGRectMakeWithIntegerRect( struct CGPixelRect a)
+static inline CGRect   CGRectMakeWithPixelRect( struct CGPixelRect a)
 {
    return( CGRectMake( a.origin.x, a.origin.y, a.size.width, a.size.height));
 }
 
 
-static inline CGRect   CGRectMakeWithIntegerSize( struct CGPixelSize a)
+static inline CGRect   CGRectMakeWithPixelSize( struct CGPixelSize a)
 {
    return( CGRectMake( 0, 0, a.width, a.height));
 }
@@ -62,6 +62,15 @@ static inline struct CGPixelRect   CGPixelRectMakeWithSize( CGSize a)
                             roundf( a.width), 
                             roundf( a.height)));
 }
+
+static inline struct CGPixelRect   CGPixelRectMakeWithPixelSize( struct CGPixelSize a)
+{
+   return( CGPixelRectMake( 0,
+                            0, 
+                            a.width, 
+                            a.height));
+}
+
 
 #endif
 
