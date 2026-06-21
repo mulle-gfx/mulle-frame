@@ -6,10 +6,11 @@
    "license" : "UNLICENSED",
    "repo" : "MulleUI/mulle-frame",
    "src" : [
+      "asset/dox/TOC.md",
       "src/CGBitmap+CGGeometry.h",
       "src/CGFrame.h",
-      "src/include-private.h",
-      "src/include.h",
+      "src/generic/include-private.h",
+      "src/generic/include.h",
       "src/mulle-frame.c",
       "src/mulle-frame.h",
       "src/reflect/_mulle-frame-include-private.h",

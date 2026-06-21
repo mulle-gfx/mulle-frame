@@ -63,7 +63,7 @@ typedef uintptr_t  CGFramebufferBitmapType;
 typedef struct CGWindowInfo
 {
    CGRect                     frame;            // window coordinates frame
-   struct CGPixelSize    framebufferSize;  // actual pixels (frameSize * pixelRatio)
+   struct CGPixelSize         framebufferSize;  // actual pixels (frameSize * pixelRatio)
    CGVector                   UIScale;
    CGFloat                    pixelRatio;
 } CGWindowInfo;
@@ -172,6 +172,7 @@ typedef struct CGFrameInfo
    mulle_absolutetime_t       now;              // mulle_absolutetime_t
    mulle_relativetime_t       refreshRate;      // screen refreshRate, NOT the frameRate we want to achieve
    mulle_relativetime_t       frameRate;        // the frameRate we want to achieve
+   uintptr_t                  debuggingFlags;   // fummel code for nvgTrace
 } CGFrameInfo;
 
 

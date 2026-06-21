@@ -31,7 +31,7 @@ static inline unsigned int   mulle_frame_get_version_patch( void)
 }
 
 
-MULLE__FRAME_EXTERN_GLOBAL
+MULLE__FRAME_GLOBAL
 uint32_t   mulle_frame_get_version( void);
 
 

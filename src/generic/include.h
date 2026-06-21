@@ -25,8 +25,19 @@
 
 #include "_mulle-frame-include.h"
 
-#ifndef MULLE__FRAME_EXTERN_GLOBAL
-# define MULLE__FRAME_EXTERN_GLOBAL  MULLE_C_EXTERN_GLOBAL
+
+#ifndef MULLE__FRAME_GLOBAL
+# if defined( MULLE__FRAME_BUILD) || defined( MULLE__GFX_BUILD)
+#  define MULLE__FRAME_GLOBAL      MULLE_C_GLOBAL
+#  define MULLE__FRAME_GLOBAL_VAR  MULLE_C_GLOBAL_VAR
+# else
+#  if defined( MULLE__FRAME_INCLUDE_DYNAMIC) || (defined( MULLE_INCLUDE_DYNAMIC) && ! defined( MULLE__FRAME_INCLUDE_STATIC))
+#   define MULLE__FRAME_GLOBAL  MULLE_C_EXTERN_GLOBAL
+#  else
+#   define MULLE__FRAME_GLOBAL  extern
+#  endif
+#  define MULLE__FRAME_GLOBAL_VAR
+# endif
 #endif
 
 /* You can add some more include statements here */
