@@ -3,15 +3,18 @@
    {
       description="💺 mulle-frame combines mulle-geometry with mulle-bitmap";
       domain="github";
+      language="c";
+      dialect="c";
       name="mulle-frame";
       user="mulle-gfx";
       repo="mulle-frame";
-      homepage="https://github.com/MulleUI/mulle-frame/tree/mulle-frame.git";
-      license="UNLICENSED"
+      homepage="https://github.com/mulle-gfx/mulle-frame";
+      license="UNLICENSED";
    };
    dependencies =
    (
       {
+         description="🔭 Basic geometric types";
          domain="github";
          name="mulle-geometry";
          repo="mulle-geometry";
@@ -19,6 +22,7 @@
          user="MulleUI";
       },
       {
+         description="👾 mulle-bitmap describes and handles... bitmaps";
          domain="github";
          name="mulle-bitmap";
          repo="mulle-bitmap";

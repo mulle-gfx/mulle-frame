@@ -2,27 +2,24 @@
 
 #### 💺 mulle-frame combines mulle-geometry with mulle-bitmap
 
-
-# mulle-frame
-
-#### 💺 mulle-frame combines mulle-geometry with mulle-bitmap
-
 The process of transforming drawing code into bitmaps is called "rasterization".
 Whenever the drawing changes, the bitmap has to be updated. This update is
-called a "frame". The bitmap is conventionally called "framebuffer".
+called a "frame". The bitmap which is drawn to, is conventionally called
+the "framebuffer".
 
 In MulleUI you don't have direct access to the framebuffer, as its on the
 GPU (usually), but you can read pixels from it.
 
-This library forms the relationship between mulle-geometry and mulle-bitmap.
+This library forms the relationship between mulle-geometry and mulle-bitmap
+and introduces the frame as a concept. This is abstract though, it doesn't
+provide access to actual Operating System framebuffers. That's the job of the
+window libraries of MulleUI.
 
 
 
-
-
-| Release Version                                       | Release Notes
-|-------------------------------------------------------|--------------
-| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-gfx/mulle-frame.svg?branch=release) [![Build Status](https://github.com/mulle-gfx/mulle-frame/workflows/CI/badge.svg?branch=release)](//github.com/mulle-gfx/mulle-frame/actions) | [RELEASENOTES](RELEASENOTES.md) |
+| Release Version                                       | Release Notes  | AI Documentation
+|-------------------------------------------------------|----------------|---------------
+| ![Mulle kybernetiK tag](https://img.shields.io/github/tag/mulle-gfx/mulle-frame.svg) [![Build Status](https://github.com/mulle-gfx/mulle-frame/workflows/CI/badge.svg)](//github.com/mulle-gfx/mulle-frame/actions) | [RELEASENOTES](RELEASENOTES.md) | [DeepWiki for mulle-frame](https://deepwiki.com/mulle-gfx/mulle-frame)
 
 
 
@@ -39,9 +36,9 @@ This library forms the relationship between mulle-geometry and mulle-bitmap.
 
 ## Add
 
-**This project is a component of the [mulle-core](//github.com/mulle-core/mulle-core) library. As such you usually will *not* add or install it
-individually, unless you specifically do not want to link against
-`mulle-core`.**
+**This project is a component of the [mulle-gfx](//github.com/mulle-gfx/mulle-gfx) library.
+As such you usually will *not* add or install it individually, unless you
+specifically do not want to link against `mulle-gfx`.**
 
 
 ### Add as an individual component
@@ -80,8 +77,8 @@ Install the requirements:
 
 | Requirements                                 | Description
 |----------------------------------------------|-----------------------
-| [mulle-geometry](https://github.com/MulleUI/mulle-geometry)             | 
-| [mulle-bitmap](https://github.com/MulleUI/mulle-bitmap)             | 
+| [mulle-geometry](https://github.com/MulleUI/mulle-geometry)             | 🔭 Basic geometric types
+| [mulle-bitmap](https://github.com/MulleUI/mulle-bitmap)             | 👾 mulle-bitmap describes and handles... bitmaps
 
 Install **mulle-frame** into `/usr/local` with [cmake](https://cmake.org):
 

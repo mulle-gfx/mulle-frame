@@ -4,7 +4,7 @@
    "description" : "💺 mulle-frame combines mulle-geometry with mulle-bitmap",
    "keywords" : [],
    "license" : "UNLICENSED",
-   "repo" : "MulleUI/mulle-frame",
+   "repo" : "mulle-gfx/mulle-frame",
    "src" : [
       "asset/dox/TOC.md",
       "src/CGBitmap+CGGeometry.h",
