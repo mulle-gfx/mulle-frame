@@ -24,6 +24,38 @@ window libraries of MulleUI.
 
 
 
+## Documentation & Guides
+
+* [API Summary](asset/dox/api/toc)
+* [Coder Guide](asset/howto/coder/mulle-frame)
+
+## Usage
+
+Describe a window once, in logical points, and derive the framebuffer size
+in pixels (e.g. for retina displays):
+
+``` c
+#include <mulle-frame/mulle-frame.h>
+
+int  main( void)
+{
+   struct CGFrameInfo  frame = CGFrameInfoSFMake( CGRectMake( 0, 0, 640, 360),
+                                                  CGPixelSizeMake( 1280, 720),
+                                                  2.0);
+
+   printf( "frame  %g x %g\n",
+           CGFrameInfoGetFrameSize( &frame).width,
+           CGFrameInfoGetFrameSize( &frame).height);
+   printf( "pixels %ld x %ld (pixelRatio %.2f)\n",
+           CGFrameInfoGetFramebufferSize( &frame).width,
+           CGFrameInfoGetFramebufferSize( &frame).height,
+           CGWindowInfoGetPixelRatio( &frame.window));
+   return( 0);
+}
+```
+
+`pixelRatio` is derived as `framebuffer / frame`, so a 640x360 window on a
+retina display is backed by 1280x720 pixels.
 
 
 ### You are here

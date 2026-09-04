@@ -6,7 +6,7 @@
    "license" : "UNLICENSED",
    "repo" : "mulle-gfx/mulle-frame",
    "src" : [
-      "asset/dox/TOC.md",
+      "asset/dox/api/toc/index.md",
       "src/CGBitmap+CGGeometry.h",
       "src/CGFrame.h",
       "src/generic/include-private.h",

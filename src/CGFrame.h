@@ -1,6 +1,6 @@
 //
-//  CGFrame.c
-//  mulle_frame
+//  CGFrame.h
+//  mulle-frame
 //
 //  Copyright (c) 2021 Nat! - Mulle kybernetiK.
 //  Copyright (c) 2021 Codeon GmbH.
