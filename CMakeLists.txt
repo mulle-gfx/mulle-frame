@@ -8,7 +8,7 @@
 #
 cmake_minimum_required( VERSION 3.15...99.99)
 
-project( mulle-frame VERSION 0.8.0 LANGUAGES C)
+project( mulle-frame VERSION 0.8.1 LANGUAGES C)
 
 
 set( MULLE_PROJECT_TYPE "Library")
@@ -57,8 +57,8 @@ endif()
 include( InstallLibrary)
 
 if( LINK_PHASE)
-   include( InstallCMakeInclude)
-   include( InstallCMakePackage)
+   include( AddSubdirectorySupport)
+   include( FindPackageSupport)
 endif()
 
 include( FinalOutput OPTIONAL)

@@ -44,7 +44,7 @@
  *
  *  version:  major, minor, patch
  */
-#define MULLE__FRAME_VERSION  ((0UL << 20) | (8 << 8) | 0)
+#define MULLE__FRAME_VERSION  ((0UL << 20) | (8 << 8) | 1)
 
 
 static inline unsigned int   mulle_frame_get_version_major( void)

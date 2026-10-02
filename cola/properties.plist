@@ -10,7 +10,7 @@
       repo="mulle-frame";
       homepage="https://github.com/mulle-gfx/mulle-frame";
       license="UNLICENSED";
-      version="0.8.0";
+      version="0.8.1";
    };
    dependencies =
    (
