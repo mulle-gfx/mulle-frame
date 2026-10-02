@@ -1,6 +1,6 @@
 {
    "name" : "mulle-frame",
-   "version" : "0.8.0",
+   "version" : "0.8.1",
    "description" : "💺 mulle-frame combines mulle-geometry with mulle-bitmap",
    "keywords" : [],
    "license" : "UNLICENSED",
